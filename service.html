@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Services | BNL  App Ecosystem</title>
+  <meta name="description" content="Explore N-Me services: Business listings, job portals, and AI-powered local discovery.">
+  
+  <link rel="icon" type="image/png" href="/static/images/nmeappwhite.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    body { font-family: 'Manrope', sans-serif; }
+    .glass-nav { @apply bg-white/30 backdrop-blur-xl border border-white/40; }
+    .service-card { @apply bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-xl; }
+    .icon-box { @apply w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-colors duration-300; }
+  </style>
+</head>
+
+<body class="bg-[#f3f4f6] text-slate-900 overflow-x-hidden">
+
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]">
+    <div class="glass-nav px-8 py-4 rounded-full flex justify-between items-center shadow-sm">
+      <a href="/"><img src="LOGO" class="h-10" alt="BNL Logo" /></a>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-600 transition">About</a></li>
+        <li><a href="blog.html" class="hover:text-blue-600 transition">Blogs</a></li>
+        <li><a href="services.html" class="text-blue-600 font-bold">Services</a></li>
+        <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
+      </ul>
+      <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-md">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="pt-44 pb-20 px-6 bg-white rounded-b-[60px] shadow-sm">
+    <div class="max-w-[1200px] mx-auto text-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">One App. <span class="text-blue-600">Infinite</span> Possibilities.</h1>
+      <p class="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        BNL  provides a multi-layered ecosystem designed to empower local communities through technology, connectivity, and opportunity.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="service-card group">
+          <div class="icon-box bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white">🏠</div>
+          <h3 class="text-2xl font-bold mb-4">Home maintance</h3>
+          <p class="text-slate-500 mb-6"> </p>
+          <ul class="space-y-3 text-sm font-semibold text-slate-700">
+            <li class="flex items-center gap-2">✅ Carpenter & Painter </li>
+            <li class="flex items-center gap-2">✅ Electrician & Plumber</li>
+            <li class="flex items-center gap-2">✅ *********************</li>
+          </ul>
+        </div>
+
+        <div class="service-card group">
+          <div class="icon-box bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white">🔧</div>
+          <h3 class="text-2xl font-bold mb-4">Electronic Repair</h3>
+          <p class="text-slate-500 mb-6">AC Service & Repair</p>
+          <ul class="space-y-3 text-sm font-semibold text-slate-700">
+            <li class="flex items-center gap-2">✅ AC Service & Repair</li>
+            <li class="flex items-center gap-2">✅ Fridge & Washing Machine</li>
+            <li class="flex items-center gap-2">✅ *************************</li>
+          </ul>
+        </div>
+
+        <div class="service-card group">
+          <div class="icon-box bg-purple-100 text-purple-600 group-hover:bg-purple-600 group-hover:text-white">💼</div>
+          <h3 class="text-2xl font-bold mb-4">My Job Portal</h3>
+          <p class="text-slate-500 mb-6">A dedicated space for professionals to find local openings and for recruiters to find verified talent within their city.</p>
+          <ul class="space-y-3 text-sm font-semibold text-slate-700">
+            <li class="flex items-center gap-2">✅ Instant Job Alerts</li>
+            <li class="flex items-center gap-2">✅ Easy Resume Upload</li>
+            <li class="flex items-center gap-2">✅ Verified Recruiters</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6">
+    <div class="max-w-[1200px] mx-auto bg-slate-900 rounded-[50px] overflow-hidden flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/2 p-12 md:p-20">
+        <span class="text-blue-400 font-bold tracking-widest text-sm uppercase">Next-Gen Technology</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Meet BNL : Your AI Assistant</h2>
+        <p class="text-slate-400 text-lg leading-relaxed mb-8">
+          BNL is our proprietary AI designed to understand your needs. Whether you're looking for a "quiet place to work" or "the best biryani under 5km," NYRA filters through thousands of listings to give you the perfect match.
+        </p>
+        <button class="bg-white text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">Try BNL AI  Now</button>
+      </div>
+      <div class="w-full md:w-1/2 h-[400px] md:h-[600px] bg-blue-600 relative flex items-center justify-center">
+        <div class="w-64 h-[500px] bg-black rounded-[3rem] border-[8px] border-slate-800 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 w-full h-full bg-gradient-to-b from-blue-500/20 to-transparent"></div>
+            <div class="p-6 mt-10">
+                <div class="w-full h-8 bg-slate-800 rounded-full mb-4"></div>
+                <div class="w-3/4 h-8 bg-slate-800 rounded-full mb-10"></div>
+                <div class="space-y-4">
+                    <div class="w-full h-20 bg-blue-600/30 rounded-2xl border border-blue-400/30"></div>
+                    <div class="w-full h-20 bg-blue-600/30 rounded-2xl border border-blue-400/30"></div>
+                </div>
+            </div>
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                🎙️
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">How It Works</h2>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+        <div class="flex-1 text-center">
+          <div class="text-6xl font-black text-slate-200 mb-4">01</div>
+          <h4 class="text-xl font-bold mb-2">Download & Register</h4>
+          <p class="text-slate-500">Create your profile in seconds with simple OTP verification.</p>
+        </div>
+        <div class="flex-1 text-center">
+          <div class="text-6xl font-black text-slate-200 mb-4">02</div>
+          <h4 class="text-xl font-bold mb-2">Select Your Need</h4>
+          <p class="text-slate-500">Choose between , Services, or Job Portals.</p>
+        </div>
+        <div class="flex-1 text-center">
+          <div class="text-6xl font-black text-slate-200 mb-4">03</div>
+          <h4 class="text-xl font-bold mb-2">Connect Instantly</h4>
+          <p class="text-slate-500">Chat, call, or apply with a single tap on your screen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-24 px-6">
+    <div class="max-w-[1200px] mx-auto bg-blue-600 p-12 md:p-20 rounded-[60px] text-center text-white">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8">Ready to experience BNL APP?</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <button class="bg-white text-blue-600 px-10 py-4 rounded-full font-bold">Download for Android</button>
+        <button class="bg-slate-900 text-white px-10 py-4 rounded-full font-bold">Download for iOS</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".service-card", {
+      scrollTrigger: {
+        trigger: ".service-card",
+        start: "top 80%"
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+
+    gsap.from("h1", {
+      y: 30,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power4.out"
+    });
+  </script>
+
+</body>
+</html>

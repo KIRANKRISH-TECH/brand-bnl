@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About Us | BNL - App</title>
+  <meta name="description" content="Learn about N-Me, the visionary platform connecting businesses and users instantly. Created by Cybexel Technologies.">
+  
+  <link rel="icon" type="image/png" href="IMG" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <style>
+    body { font-family: 'Manrope', sans-serif; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #E4EEFF 0%, #F3F4F6 100%);
+    }
+    .glass-nav {
+      @apply bg-white/30 backdrop-blur-xl border border-white/40;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f3f4f6] text-slate-900 overflow-x-hidden">
+
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]">
+    <div class="glass-nav px-8 py-4 rounded-full flex justify-between items-center shadow-sm">
+      <a href="/"><img src="/static/images/logo.png" class="h-10" alt="BNL " /></a>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+        <li><a href="about.html" class="text-blue-600 font-bold">About</a></li>
+        <li><a href="blog.html" class="hover:text-blue-600 transition">Blogs</a></li>
+        <li><a href="service.html" class="hover:text-blue-600 transition">Services</a></li>
+        <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
+      </ul>
+      <a href="#" class="hidden md:block bg-[#3C49FF] text-white px-6 py-2 rounded-full text-sm font-bold hover:shadow-lg transition">Download</a>
+    </div>
+  </nav>
+
+  <section class="hero-gradient pt-40 pb-20 px-6">
+    <div class="max-w-[1200px] mx-auto flex flex-col items-center text-center">
+      <span class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-bold mb-6">OUR STORY</span>
+      <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight">
+        Connecting the world,<br>
+        <span id="typing-text" class="text-blue-600">one click at a time.</span>
+      </h1>
+      <p class="mt-8 text-lg text-slate-600 max-w-2xl leading-relaxed">
+        BNL - APP is more than an app. It's a bridge between your needs and the businesses that serve them, built with speed and security at its core.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="relative rounded-[40px] overflow-hidden shadow-2xl h-[400px] md:h-[600px]">
+        <img src="https://i.pinimg.com/1200x/85/23/8e/85238e669598b4954f88a7d3fbc5ea5c.jpg" class="w-full h-full object-cover" alt="Our Vision" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-10">
+          <p class="text-white text-2xl md:text-4xl font-bold max-w-2xl">Making discovery effortless for everyone, everywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center gap-16">
+      <div class="w-64 h-64 md:w-[400px] md:h-[400px] flex-shrink-0">
+        <div class="relative w-full h-full">
+           <div class="absolute inset-0 rounded-full border-4 border-dashed border-blue-200 animate-[spin_20s_linear_infinite]"></div>
+          <img src="https://i.pinimg.com/736x/a4/ed/38/a4ed38763b4c55bb2271d828da27e6fd.jpg" class="w-full h-full object-cover rounded-full p-4" alt="Founder" />
+        </div>
+      </div>
+      
+      <div class="flex-1">
+        <h2 class="text-4xl font-bold mb-4">Meet Our Founder</h2>
+        <h3 class="text-xl text-blue-600 font-semibold mb-6">********</h3>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          ************* <strong>***********</strong>
+        </p>
+        <div class="flex gap-4">
+          <a href="" target="_blank" class="flex items-center gap-2 bg-slate-100 px-5 py-3 rounded-2xl hover:bg-blue-50 transition group">
+            <img src="" class="h-5" alt="LinkedIn">
+            <span class="font-bold group-hover:text-blue-600">LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-[#f3f4f6]">
+    <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="bg-white p-10 rounded-[40px] shadow-sm border border-slate-200 hover:scale-105 transition">
+        <div class="text-5xl font-black text-blue-600 mb-2" id="stat1">0</div>
+        <p class="text-slate-500 font-bold uppercase tracking-widest text-sm">Active Users</p>
+      </div>
+      <div class="bg-white p-10 rounded-[40px] shadow-sm border border-slate-200 hover:scale-105 transition">
+        <div class="text-5xl font-black text-blue-600 mb-2" id="stat2">0</div>
+        <p class="text-slate-500 font-bold uppercase tracking-widest text-sm">Verified Shops</p>
+      </div>
+      <div class="bg-white p-10 rounded-[40px] shadow-sm border border-slate-200 hover:scale-105 transition">
+        <div class="text-5xl font-black text-blue-600 mb-2" id="stat3">0</div>
+        <p class="text-slate-500 font-bold uppercase tracking-widest text-sm">Cities Covered</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="bg-blue-600 rounded-[50px] p-12 text-center text-white relative overflow-hidden">
+        <div class="relative z-10">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to discover what's near you?</h2>
+          <p class="mb-10 text-blue-100 text-lg">Join thousands of users simplifying their daily search.</p>
+          <button class="bg-white text-blue-600 px-10 py-4 rounded-full font-bold hover:bg-blue-50 transition">Get Started Now</button>
+        </div>
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500 rounded-full opacity-50"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+    // 1. Typing Animation
+    gsap.to("#typing-text", {
+      duration: 2,
+      text: "just for you.",
+      delay: 1,
+      ease: "none",
+    });
+
+    // 2. Counter Animation
+    function animateCounter(id, target) {
+      let obj = { val: 0 };
+      gsap.to(obj, {
+        val: target,
+        duration: 2,
+        scrollTrigger: {
+          trigger: "#stat1",
+          start: "top 80%",
+        },
+        onUpdate: () => {
+          document.getElementById(id).innerText = Math.floor(obj.val).toLocaleString();
+        }
+      });
+    }
+
+    animateCounter("stat1", 12500);
+    animateCounter("stat2", 850);
+    animateCounter("stat3", 45);
+
+    // 3. Section Reveal
+    gsap.from("section", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "section",
+        start: "top 90%",
+      }
+    });
+  </script>
+
+</body>
+</html>

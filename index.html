@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Home | BNL - App</title>
+  <meta name="description" content="Nme (Near Me) is a digital business and service listing platform that helps users easily discover nearby businesses.">
+  <meta name="keywords" content="shopping centre near me, closest mall near me, best shopping mall near me, clothes shopping mall near me, best shopping centres near me">
+  <meta name="author" content="Giving customers quick access to businesses.">
+  <meta name="google-site-verification" content="FEci3zbweUPJYtA9SPb_GBwMF2PgzRURKa9arhL5ROE"/>
+
+  <link rel="icon" type="image/png" href="/static/images/nmeappwhite.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+
+ 
+
+  <style>
+    .pill-neu {
+      @apply bg-white/80 backdrop-blur-md px-6 py-3 rounded-full shadow-sm border border-white/50 whitespace-nowrap;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 2rem;
+      animation: scroll 20s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .ring-glow {
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, transparent, #3C5FFF, transparent);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      padding: 2px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f3f4f6] font-manrope">
+
+  <div id="sharedCircleWrapper" class="relative w-full overflow-hidden">
+    
+    <div id="sharedCircle" class="absolute left-1/2 top-[75vh] -translate-x-1/2 w-[282px] h-[282px] md:w-[460px] md:h-[460px] rounded-full z-20 bg-gradient-to-br from-[#3C5FFF] to-[#C4CFFF] shadow-lg"></div>
+
+    <div id="heroSection" class="relative w-[92%] max-w-[380px] md:w-[1400px] md:max-w-none mx-auto mt-6 rounded-[40px] h-[52rem] md:h-[48rem] border-[4px] border-white overflow-hidden bg-slate-900">
+      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60">
+        <source src="/static/video/bg-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="relative z-10 p-6 md:p-10">
+        <nav class="flex justify-between items-center w-full">
+          <a href="/"><img src="https://i.pinimg.com/1200x/06/58/7c/06587c5d74e009fd6388254d321e0ccf.jpg" class="h-12" alt="BNL  Logo" /></a>
+          <div class="flex items-center gap-3">
+            <ul class="hidden md:flex gap-10 px-10 py-5 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 text-white">
+              <li><a href="/" class="font-semibold text-blue-400">Home</a></li>
+              <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+              <li><a href="blog.html" class="hover:text-blue-400">Blogs</a></li>
+              <li><a href="service.html" class="hover:text-blue-400">Services</a></li>
+              <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+            </ul>
+            <button id="menuBtn" class="md:hidden w-12 h-12 rounded-xl bg-[#3C49FF] flex flex-col items-center justify-center">
+              <span class="w-6 h-0.5 bg-white mb-1.5"></span>
+              <span class="w-6 h-0.5 bg-white mb-1.5"></span>
+              <span class="w-6 h-0.5 bg-white"></span>
+            </button>
+          </div>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row justify-between items-center mt-10 md:mt-16">
+          <div class="w-full lg:w-[40%] text-center lg:text-left text-white">
+            <div class="flex items-center justify-center lg:justify-start gap-2 mb-4">
+              <img src="https://i.pinimg.com/736x/9b/ba/a4/9bbaa4511e2c4b0bc14d2a58b6f58a5d.jpg" class="h-6" alt="Users">
+              <p class="text-sm font-medium"><span id="userCount">0</span>+ Trusted Users</p>
+            </div>
+            <h1 class="text-[32px] md:text-[56px] font-bold leading-tight">Everything You Need</h1>
+            <div class="h-[60px] overflow-hidden text-[#3C79FF] text-[32px] md:text-[46px] font-bold" id="textSwitcher">
+              <div id="scrollContent">
+                <div>One Solution</div>
+                <div>Near You</div>
+                <div>Fast Access</div>
+              </div>
+            </div>
+            <p class="mt-4 text-lg opacity-90">Simplified, secure, and just a tap away.</p>
+            <div class="mt-8 flex justify-center lg:justify-start">
+              <a href="#" class="bg-white text-black px-8 py-3 rounded-full font-bold flex items-center gap-4 hover:scale-105 transition">
+                Download <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden lg:flex flex-col items-center bg-white/10 p-8 rounded-[40px] border border-white/20 backdrop-blur-md">
+            <p class="text-white mb-4 font-medium">Scan to Download</p>
+            <div class="bg-white p-4 rounded-3xl">
+              <img src="https://i.pinimg.com/1200x/75/d7/06/75d706845313003903984e0a6c0aa7b2.jpg" class="w-40 h-40" alt="QR Code">
+            </div>
+            <div class="flex gap-4 mt-6">
+              <button class="p-3 bg-white rounded-full shadow-lg"><img src="https://i.pinimg.com/736x/60/6b/c0/606bc0717982547e555a514b479365a0.jpg" class="w-6" alt="Apple"></button>
+              <button class="p-3 bg-white rounded-full shadow-lg"><img src="https://i.pinimg.com/736x/3c/db/12/3cdb12749b44ac7ca912d8cf03aad1c1.jpg" class="w-6" alt="PlayStore"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute left-1/2 top-[500px] md:top-[250px] -translate-x-1/2 z-40 w-[220px] md:w-[320px]">
+      <img src="https://i.pinimg.com/1200x/85/6b/91/856b9162d7110ff7ee47b40e71875d92.jpg" class="w-full h-auto drop-shadow-2xl" alt="App Preview">
+    </div>
+
+    <section class="mt-40 py-10 overflow-hidden bg-white">
+      <div class="marquee-track">
+        <div class="pill-neu"> Fast </div>
+        <div class="pill-neu">Secure </div>
+        <div class="pill-neu">User-Friendly</div>
+        <div class="pill-neu">Real-Time</div>
+        <div class="pill-neu">Verified</div>
+        <div class="pill-neu">Fast Access</div>
+        <div class="pill-neu">Easy Navigation </div>
+        <div class="pill-neu">User-Friendly</div>
+        <div class="pill-neu">Real-Time</div>
+        <div class="pill-neu">Verified</div>
+      </div>
+    </section>
+
+    <section id="circleSection" class="py-20 relative h-[800px] flex items-center justify-center">
+      <div class="relative w-[350px] h-[350px] md:w-[600px] md:h-[600px] border border-blue-200 rounded-full flex items-center justify-center">
+        <div class="absolute -top-10 bg-white p-4 rounded-2xl shadow-xl border border-blue-100 w-48 text-center">
+          <h3 class="text-blue-600 font-bold">Business Owners</h3>
+          <p class="text-xs">Grow your reach</p>
+        </div>
+        <div class="absolute -left-20 top-1/2 bg-white p-4 rounded-2xl shadow-xl border border-blue-100 w-48 text-center">
+          <h3 class="text-blue-600 font-bold">Users</h3>
+          <p class="text-xs">Find services near you</p>
+        </div>
+        <div class="absolute -right-20 top-1/2 bg-white p-4 rounded-2xl shadow-xl border border-blue-100 w-48 text-center">
+          <h3 class="text-blue-600 font-bold">Job Recruiters</h3>
+          <p class="text-xs">Hire talent faster</p>
+        </div>
+        <div class="absolute -bottom-10 bg-white p-4 rounded-2xl shadow-xl border border-blue-100 w-48 text-center">
+          <h3 class="text-blue-600 font-bold">Service Providers</h3>
+          <p class="text-xs">Get bookings easily</p>
+        </div>
+        <div class="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-center font-bold shadow-2xl border-4 border-white">
+          BNL AI<br>Assistant
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto py-20 px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">Smart Features</h2>
+        <p class="text-gray-600 mt-4">Everything designed for a smooth experience.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-[40px] shadow-sm border hover:shadow-xl transition group">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl mb-6 flex items-center justify-center group-hover:bg-blue-600 transition">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="text-2xl font-bold">High Speed Access</h3>
+          <p class="text-gray-500 mt-4">Our dedicated servers ensure lightning-fast performance for every search.</p>
+        </div>
+        <div class="bg-white p-8 rounded-[40px] shadow-sm border hover:shadow-xl transition group">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl mb-6 flex items-center justify-center group-hover:bg-blue-600 transition">
+            <span class="text-2xl">🛡️</span>
+          </div>
+          <h3 class="text-2xl font-bold">Verified Data</h3>
+          <p class="text-gray-500 mt-4">Every business is vetted to ensure user safety and high service standards.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Register Plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Text Switcher Animation
+    const content = document.querySelector("#scrollContent");
+    gsap.to(content, {
+      y: "-66.6%",
+      duration: 6,
+      repeat: -1,
+      ease: "power2.inOut",
+      yoyo: true
+    });
+
+    // 2. User Count Animation
+    const userCount = { val: 0 };
+    gsap.to(userCount, {
+      val: 7200,
+      duration: 3,
+      scrollTrigger: "#heroSection",
+      onUpdate: () => {
+        document.getElementById("userCount").innerText = Math.floor(userCount.val).toLocaleString();
+      }
+    });
+
+    // 3. Floating Phone Movement
+    gsap.to(".absolute img[alt='App Preview']", {
+      y: -20,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    // 4. Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn.addEventListener('click', () => {
+        // Simple alert for now, logic can be added for mobile menu div
+        alert("Mobile menu opened!");
+    });
+  </script>
+
+</body>
+</html>
