@@ -61,8 +61,8 @@
       </video>
 
       <div class="relative z-10 p-6 md:p-10">
-     <!-- NAVBAR -->
- <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]"></nav>
+  <!-- NAVBAR -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]"></nav>
   <div class="bg-white/30 backdrop-blur-xl border border-white/40 
               px-8 py-4 flex justify-between items-center 
               shadow-sm rounded-2xl">
@@ -242,7 +242,16 @@
     menuBtn.addEventListener('click', () => {
         // Simple alert for now, logic can be added for mobile menu div
         alert("Mobile menu opened!");
+
+        
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  
     });
+    
   </script>
 
 </body>
