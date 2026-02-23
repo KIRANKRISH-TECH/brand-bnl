@@ -19,6 +19,19 @@
   <style>
     body { font-family: 'Manrope', sans-serif; }
     .blog-card:hover .blog-image { transform: scale(1.05); }
+    @keyframes zoomPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+    .blog-card,
+    .feature-card { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+    .blog-card:hover,
+    .feature-card:hover {
+      animation: zoomPulse 0.7s ease-in-out;
+      animation-iteration-count: 1;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    }
     .glass-nav { @apply bg-white/30 backdrop-blur-xl border border-white/40; }
     .category-pill:hover { @apply bg-blue-600 text-white border-blue-600; }
     .active-category { @apply bg-blue-600 text-white border-blue-600; }
@@ -76,71 +89,47 @@
   </section>
 
   <section class="py-8 px-6">
-    <div class="max-w-[1200px] mx-auto flex flex-wrap gap-3 justify-center">
-      <button class="category-pill active-category px-6 py-2 rounded-full border border-slate-300 font-medium transition">All Posts</button>
-      <button class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Technology</button>
-      <button class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Business Tips</button>
-      <button class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Community</button>
-      <button class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Updates</button>
+    <div id="categoryFilters" class="max-w-[1200px] mx-auto flex flex-wrap gap-3 justify-center">
+      <button data-category="all" class="category-pill active-category px-6 py-2 rounded-full border border-slate-300 font-medium transition">All Posts</button>
+      <button data-category="technology" class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Technology</button>
+      <button data-category="business tips" class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Business Tips</button>
+      <button data-category="community" class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Community</button>
+      <button data-category="updates" class="category-pill px-6 py-2 rounded-full border border-slate-300 font-medium transition">Updates</button>
+    </div>
+    <div class="max-w-[1200px] mx-auto mt-6">
+      <div class="relative">
+        <input id="blogSearch" type="text" placeholder="Search..." class="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 pr-12 outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-50 transition">
+        <span class="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400">&#128269;</span>
+      </div>
+    </div>
+    <div class="max-w-[1200px] mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+      <article class="feature-card bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <img src="https://i.pinimg.com/1200x/07/06/b8/0706b8951b4a8832dadc3d46b7c6748a.jpg" class="block w-full h-44 object-cover" alt="AI Search Personalization">
+        <div class="p-5">
+        <p class="text-xs uppercase tracking-wider text-blue-600 font-bold">Hand Bag Repair</p>
+        <h3 class="text-lg font-bold mt-2">Searching for Hand Bag Repair Near Me?</h3>
+        <p class="text-sm text-slate-500 mt-2">read more</p>
+        </div>
+      </article>
+      <article class="feature-card bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <img src="https://i.pinimg.com/1200x/39/09/aa/3909aa12aa889c3fb6bd2fdb9f84706e.jpg" class="block w-full h-44 object-cover" alt="Local Business Growth">
+        <div class="p-5">
+        <p class="text-xs uppercase tracking-wider text-blue-600 font-bold">Leather Bag Repair</p>
+        <h3 class="text-lg font-bold mt-2">Searching for Leather Bag Repair Near Me?</h3>
+        <p class="text-sm text-slate-500 mt-2">read more</p>
+        </div>
+      </article>
+      <article class="feature-card bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <img src="https://i.pinimg.com/1200x/e1/f8/f4/e1f8f4c1577ae2d20e61bf6772688516.jpg" class="block w-full h-44 object-cover" alt="Marketplace Security Basics">
+        <div class="p-5">
+        <p class="text-xs uppercase tracking-wider text-blue-600 font-bold">Handbag Repair</p>
+        <h3 class="text-lg font-bold mt-2">Searching for Handbag Repair Near Me?</h3>
+        <p class="text-sm text-slate-500 mt-2">read more</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section class="py-12 px-6 mb-20">
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <div class="blog-card bg-white rounded-[32px] overflow-hidden shadow-sm border border-white transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="h-56 overflow-hidden">
-          <img src="/static/images/blog1.jpg" class="w-full h-full object-cover blog-image transition duration-500" alt="Blog 1">
-        </div>
-        <div class="p-8">
-          <span class="text-xs font-bold text-blue-600 uppercase">Community</span>
-          <h3 class="text-xl font-bold mt-2 mb-4 leading-snug">5 Ways Local Shops Can Boost Their Digital Presence</h3>
-          <p class="text-slate-500 text-sm mb-6 line-clamp-2">In the digital age, being 'Near Me' isn't enough. You need to be visible. Here is how...</p>
-          <div class="flex justify-between items-center pt-6 border-t border-slate-100">
-            <span class="text-xs text-slate-400">2026</span>
-            <a href="#" class="text-blue-600 font-bold text-sm">Read More →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card bg-white rounded-[32px] overflow-hidden shadow-sm border border-white transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="h-56 overflow-hidden">
-          <img src="/static/images/blog2.jpg" class="w-full h-full object-cover blog-image transition duration-500" alt="Blog 2">
-        </div>
-        <div class="p-8">
-          <span class="text-xs font-bold text-blue-600 uppercase">Updates</span>
-          <h3 class="text-xl font-bold mt-2 mb-4 leading-snug">Upcoming Features: Job Board 2.0 and More</h3>
-          <p class="text-slate-500 text-sm mb-6 line-clamp-2">We are making hiring easier. Preview the new interface coming to the N-Me app this winter.</p>
-          <div class="flex justify-between items-center pt-6 border-t border-slate-100">
-            <span class="text-xs text-slate-400">2026</span>
-            <a href="#" class="text-blue-600 font-bold text-sm">Read More →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card bg-white rounded-[32px] overflow-hidden shadow-sm border border-white transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-        <div class="h-56 overflow-hidden">
-          <img src="/static/images/blog3.jpg" class="w-full h-full object-cover blog-image transition duration-500" alt="Blog 3">
-        </div>
-        <div class="p-8">
-          <span class="text-xs font-bold text-blue-600 uppercase">Technology</span>
-          <h3 class="text-xl font-bold mt-2 mb-4 leading-snug">The Importance of Data Security in Listing Apps</h3>
-          <p class="text-slate-500 text-sm mb-6 line-clamp-2">How N-Me uses end-to-end encryption to protect business owners and users alike.</p>
-          <div class="flex justify-between items-center pt-6 border-t border-slate-100">
-            <span class="text-xs text-slate-400">2026</span>
-            <a href="#" class="text-blue-600 font-bold text-sm">Read More →</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="flex justify-center mt-16 gap-2">
-      <button class="w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center hover:bg-white transition">1</button>
-      <button class="w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center bg-white shadow-sm font-bold">2</button>
-      <button class="w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center hover:bg-white transition">→</button>
-    </div>
-  </section>
 
   <section class="max-w-[1200px] mx-auto px-6 mb-20">
     <div class="bg-slate-900 rounded-[40px] p-8 md:p-16 flex flex-col items-center text-center relative overflow-hidden">
@@ -160,14 +149,27 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // Initial Reveal
+    gsap.from(".feature-card", {
+      opacity: 0,
+      y: 24,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".feature-card",
+        start: "top 88%"
+      }
+    });
+
     gsap.from(".blog-card", {
       opacity: 0,
-      y: 30,
+      y: 36,
+      scale: 0.98,
       duration: 0.8,
       stagger: 0.2,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: ".grid",
+        trigger: "#blogGrid",
         start: "top 85%"
       }
     });
@@ -186,6 +188,44 @@
         const isOpen = !mobileMenu.classList.contains("hidden");
         mobileMenu.classList.toggle("hidden");
         menuBtn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+
+    const searchInput = document.getElementById("blogSearch");
+    const categoryFilters = Array.from(document.querySelectorAll("#categoryFilters .category-pill"));
+    const cards = Array.from(document.querySelectorAll(".blog-card"));
+    const noResults = document.getElementById("noResults");
+    let activeCategory = "all";
+
+    const applyFilters = () => {
+      const term = (searchInput?.value || "").trim().toLowerCase();
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const title = (card.dataset.title || "").toLowerCase();
+        const category = (card.dataset.category || "").toLowerCase();
+        const matchesSearch = !term || title.includes(term) || category.includes(term);
+        const matchesCategory = activeCategory === "all" || category === activeCategory;
+        const shouldShow = matchesSearch && matchesCategory;
+        card.classList.toggle("hidden", !shouldShow);
+        if (shouldShow) visibleCount += 1;
+      });
+      if (noResults) {
+        noResults.classList.toggle("hidden", visibleCount !== 0);
+      }
+    };
+
+    if (searchInput && cards.length) {
+      searchInput.addEventListener("input", applyFilters);
+    }
+
+    if (categoryFilters.length && cards.length) {
+      categoryFilters.forEach((button) => {
+        button.addEventListener("click", () => {
+          categoryFilters.forEach((pill) => pill.classList.remove("active-category"));
+          button.classList.add("active-category");
+          activeCategory = (button.dataset.category || "all").toLowerCase();
+          applyFilters();
+        });
       });
     }
   </script>
