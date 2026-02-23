@@ -61,21 +61,30 @@
       </video>
 
       <div class="relative z-10 p-6 md:p-10">
-        <nav class="flex justify-between items-center w-full">
-          <a href="/"><img src="https://i.pinimg.com/1200x/06/58/7c/06587c5d74e009fd6388254d321e0ccf.jpg" class="h-12" alt="BNL  Logo" /></a>
-          <div class="flex items-center gap-3">
-            <ul class="hidden md:flex gap-10 px-10 py-5 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 text-white">
-              <li><a href="/" class="font-semibold text-blue-400">Home</a></li>
-              <li><a href="about.html" class="hover:text-blue-400">About</a></li>
-              <li><a href="blog.html" class="hover:text-blue-400">Blogs</a></li>
-              <li><a href="service.html" class="hover:text-blue-400">Services</a></li>
-              <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
-            </ul>
-            <button id="menuBtn" class="md:hidden w-12 h-12 rounded-xl bg-[#3C49FF] flex flex-col items-center justify-center">
-              <span class="w-6 h-0.5 bg-white mb-1.5"></span>
-              <span class="w-6 h-0.5 bg-white mb-1.5"></span>
-              <span class="w-6 h-0.5 bg-white"></span>
-            </button>
+        <nav class="w-full">
+          <div class="flex justify-between items-center">
+            <a href="/"><img src="https://i.pinimg.com/1200x/06/58/7c/06587c5d74e009fd6388254d321e0ccf.jpg" class="h-12" alt="BNL  Logo" /></a>
+            <div class="flex items-center gap-3">
+              <ul class="hidden md:flex gap-10 px-10 py-5 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 text-white">
+                <li><a href="/" class="font-semibold text-blue-400">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+                <li><a href="blog.html" class="hover:text-blue-400">Blogs</a></li>
+                <li><a href="service.html" class="hover:text-blue-400">Services</a></li>
+                <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+              </ul>
+              <button id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden w-12 h-12 rounded-xl bg-[#3C49FF] flex flex-col items-center justify-center">
+                <span class="w-6 h-0.5 bg-white mb-1.5"></span>
+                <span class="w-6 h-0.5 bg-white mb-1.5"></span>
+                <span class="w-6 h-0.5 bg-white"></span>
+              </button>
+            </div>
+          </div>
+          <div id="mobileMenu" class="hidden md:hidden mt-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-xl border border-white/40 p-5 space-y-3">
+            <a href="/" class="block font-semibold text-blue-600">Home</a>
+            <a href="about.html" class="block hover:text-blue-600">About</a>
+            <a href="blog.html" class="block hover:text-blue-600">Blogs</a>
+            <a href="service.html" class="block hover:text-blue-600">Services</a>
+            <a href="contact.html" class="block hover:text-blue-600">Contact</a>
           </div>
         </nav>
 
@@ -219,11 +228,15 @@
     });
 
     // 4. Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventListener('click', () => {
-        // Simple alert for now, logic can be added for mobile menu div
-        alert("Mobile menu opened!");
-    });
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
   </script>
 
 </body>

@@ -27,7 +27,7 @@
 
 <body class="bg-[#f3f4f6] text-slate-900">
 
-   <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]"></nav>
+   <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]">
     <div class="glass-nav px-8 py-4 rounded-full flex justify-between items-center shadow-sm">
       <a href="/"><img src="/static/images/logo.png" class="h-10" alt="BNL  Logo" /></a>
       <ul class="hidden md:flex gap-8 font-medium">
@@ -38,6 +38,13 @@
         <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
       </ul>
       <button class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-2xl shadow-lg p-6 space-y-4 text-center">
+      <a href="index.html" class="block hover:text-blue-600">Home</a>
+      <a href="about.html" class="block hover:text-blue-600">About</a>
+      <a href="blog.html" class="block text-blue-600 font-bold">Blogs</a>
+      <a href="service.html" class="block hover:text-blue-600">Services</a>
+      <a href="contact.html" class="block hover:text-blue-600">Contact</a>
     </div>
   </nav>
 
@@ -171,6 +178,19 @@
       duration: 1,
       stagger: 0.3
     });
+
+    const menuBtn = document.querySelector("nav button.md\\:hidden");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.setAttribute("aria-label", "Open menu");
+      menuBtn.setAttribute("aria-controls", "mobile-menu");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
   </script>
 
 </body>
