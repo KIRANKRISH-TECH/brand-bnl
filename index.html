@@ -61,42 +61,23 @@
       </video>
 
       <div class="relative z-10 p-6 md:p-10">
-  <!-- NAVBAR -->
-<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[1200px]"></nav>
-  <div class="bg-white/30 backdrop-blur-xl border border-white/40 
-              px-8 py-4 flex justify-between items-center 
-              shadow-sm rounded-2xl">
-
-    <!-- Logo -->
-    <a href="index.html">
-      <img src="/static/images/logo.png" class="h-10" alt="BNL Logo" />
-    </a>
-
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-8 font-medium">
-      <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
-      <li><a href="about.html" class="hover:text-blue-600 transition">About</a></li>
-      <li><a href="blog.html" class="text-blue-600 font-bold">Blogs</a></li>
-      <li><a href="service.html" class="hover:text-blue-600 transition">Services</a></li>
-      <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
-    </ul>
-
-    <!-- Mobile Button -->
-    <button id="menu-btn" class="md:hidden text-2xl">
-      ☰
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" 
-       class="hidden md:hidden mt-4 bg-white rounded-2xl shadow-lg p-6 space-y-4 text-center">
-    <a href="index.html" class="block hover:text-blue-600">Home</a>
-    <a href="about.html" class="block hover:text-blue-600">About</a>
-    <a href="blog.html" class="block text-blue-600 font-bold">Blogs</a>
-    <a href="service.html" class="block hover:text-blue-600">Services</a>
-    <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-  </div>
-</nav>
+        <nav class="flex justify-between items-center w-full">
+          <a href="/"><img src="https://i.pinimg.com/1200x/06/58/7c/06587c5d74e009fd6388254d321e0ccf.jpg" class="h-12" alt="BNL  Logo" /></a>
+          <div class="flex items-center gap-3">
+            <ul class="hidden md:flex gap-10 px-10 py-5 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 text-white">
+              <li><a href="/" class="font-semibold text-blue-400">Home</a></li>
+              <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+              <li><a href="blog.html" class="hover:text-blue-400">Blogs</a></li>
+              <li><a href="service.html" class="hover:text-blue-400">Services</a></li>
+              <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+            </ul>
+            <button id="menuBtn" class="md:hidden w-12 h-12 rounded-xl bg-[#3C49FF] flex flex-col items-center justify-center">
+              <span class="w-6 h-0.5 bg-white mb-1.5"></span>
+              <span class="w-6 h-0.5 bg-white mb-1.5"></span>
+              <span class="w-6 h-0.5 bg-white"></span>
+            </button>
+          </div>
+        </nav>
 
         <div class="flex flex-col lg:flex-row justify-between items-center mt-10 md:mt-16">
           <div class="w-full lg:w-[40%] text-center lg:text-left text-white">
@@ -242,16 +223,7 @@
     menuBtn.addEventListener('click', () => {
         // Simple alert for now, logic can be added for mobile menu div
         alert("Mobile menu opened!");
-
-        
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  
     });
-    
   </script>
 
 </body>
